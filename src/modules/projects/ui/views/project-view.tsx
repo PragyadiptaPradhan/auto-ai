@@ -8,12 +8,13 @@ import {
     ResizablePanel,
     ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import { MessagesConatiner } from "../components/messages-container";
+import { MessagesContainer } from "../components/messages-container";
 import { ProjectHeader } from "../components/project-header";
+import {FragmentWeb} from "@/modules/projects/ui/components/fragment-web";
 
 interface Props {
     projectId: string;
-};
+}
 
 
 export const ProjectView = ({ projectId }: Props) => {
@@ -32,7 +33,7 @@ export const ProjectView = ({ projectId }: Props) => {
                     </Suspense>
 
                     <Suspense fallback={<p>Loading messages...</p>}>
-                        <MessagesConatiner
+                        <MessagesContainer
                             projectId={projectId}
                             activeFragment = {activeFragment}
                             setActiveFragment = {setActiveFragment}
@@ -44,7 +45,7 @@ export const ProjectView = ({ projectId }: Props) => {
                     defaultSize={65}
                     minSize={50}
                 >
-                    TODO: Preview
+                    {!!activeFragment && <FragmentWeb data={activeFragment}/> }
                 </ResizablePanel>
             </ResizablePanelGroup>
         </div>

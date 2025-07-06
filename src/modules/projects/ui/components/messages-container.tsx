@@ -15,7 +15,7 @@ interface Props {
 };
 
 
-export const MessagesConatiner = ({
+export const MessagesContainer = ({
     projectId,
     activeFragment,
     setActiveFragment
