@@ -9,6 +9,7 @@ import {
 } from "@inngest/agent-kit";
 
 import { PROMPT } from "@/prompt";
+import { RESPONSE_PROMPT, FRAGMENT_TITLE_PROMPT } from "../additionalPrompt";
 import { prisma } from "@/lib/db";
 
 import { inngest } from "./client";
