@@ -28,8 +28,8 @@ export const MessagesContainer = ({
         projectId: projectId,
 
     }, {
-        // Todo: Temporary live message update
-        refetchInterval: 5000,
+        // Todo: Temporary live message update or you could use real time feature from inngest
+        refetchInterval: 2000,
     }));
 
     useEffect(() => {
