@@ -16,6 +16,7 @@ import { prisma } from "@/lib/db";
 
 import { inngest } from "./client";
 import { getSandbox, lastAssistantTextMessageContent, parseAgentOutput } from "./utils";
+import { gemini } from "inngest";
 
 interface AgentState {
   summary: string;
@@ -199,8 +200,8 @@ export const codeAgentFunction = inngest.createFunction(
       name: "fragment-title-generator",
       description: "A fragment title generator",
       system: FRAGMENT_TITLE_PROMPT,
-      model: openai({
-        model: "gpt-4o"
+      model: gemini({
+        model: "gemini-1.5-flash"
       }),
     })
 
@@ -208,8 +209,8 @@ export const codeAgentFunction = inngest.createFunction(
       name: "response-generator",
       description: "A response generator",
       system: RESPONSE_PROMPT,
-      model: openai({
-        model: "gpt-4o"
+      model: gemini({
+        model: "gemini-1.5-flash"
       }),
     })
 
