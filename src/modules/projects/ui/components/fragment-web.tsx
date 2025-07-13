@@ -20,7 +20,7 @@ export function FragmentWeb({ data }: Props){
     };
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(data.sandboxUrl).then(r => {});
+        navigator.clipboard.writeText(data.sandboxUrl);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };

@@ -20,10 +20,8 @@ import {
     BreadcrumbSeparator,
     BreadcrumbEllipsis
 } from "@/components/ui/breadcrumb";
-import {string} from "zod";
 
 import {TreeView} from "@/components/tree-view";
-import { fa } from "zod/v4/locales";
 
 type FileCollection = { [path: string]: string};
 
@@ -130,7 +128,7 @@ export  const FileExplorer = ({
 
     const handleCopy = useCallback(()=> {
         if (selectedFile){
-            navigator.clipboard.writeText(files[selectedFile]).then((r) => {});
+            navigator.clipboard.writeText(files[selectedFile]);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
         }

@@ -1,7 +1,6 @@
 "use client";
 
 import { z } from "zod";
-import { toast } from "sonner";
 
 import { useState } from "react";
 import { useClerk } from "@clerk/nextjs";

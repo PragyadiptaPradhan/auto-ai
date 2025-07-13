@@ -6,7 +6,6 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import {
     ChevronDownIcon,
     ChevronLeftIcon,
-    EditIcon,
     SunMoonIcon,
 } from "lucide-react";
 
@@ -39,7 +38,7 @@ export const ProjectHeader = ({ projectId }: Props) => {
         trpc.projects.getOne.queryOptions({ id: projectId })
     );
 
-    const { setTheme, theme } = useTheme();
+    const { setTheme } = useTheme();
 
     return (
       <header className="p-2 flex justify-between items-center border-b">
